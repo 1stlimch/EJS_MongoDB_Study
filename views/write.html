@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/write.css">
+	<title>DesignDev | 글쓰기</title>
+</head>
+<body>
+	<div class="container">
+		<div class="editTool">
+			<textarea class="title" rows="1" spellcheck="false" required placeholder="제목을 입력하세요"></textarea>
+			<textarea class="text" spellcheck="false" required placeholder="여기에 글을 작성하세요"></textarea>
+			<div class="exitUI">
+				<div class="left">
+					<button class="exit">나가기</button>
+				</div>
+				<div class="right">
+					<button class="preSave">임시저장</button>
+					<button class="upload">업로드</button>
+				</div>
+			</div>
+		</div>
+		<div class="view">
+			<p class="mirror title"></p>
+			<p class="mirror text"></p>
+		</div>
+	</div>
+	<script src="js/write.js"></script>
+</body>
+</html>
