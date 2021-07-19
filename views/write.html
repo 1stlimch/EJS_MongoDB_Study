@@ -9,19 +9,19 @@
 </head>
 <body>
 	<div class="container">
-		<div class="editTool">
-			<textarea class="title" rows="1" spellcheck="false" required placeholder="제목을 입력하세요"></textarea>
-			<textarea class="text" spellcheck="false" required placeholder="여기에 글을 작성하세요"></textarea>
+		<form class="editTool">
+			<textarea class="title" name="title" rows="1" spellcheck="false" required placeholder="제목을 입력하세요"></textarea>
+			<textarea class="text" name="text" spellcheck="false" required placeholder="여기에 글을 작성하세요"></textarea>
 			<div class="exitUI">
 				<div class="left">
 					<button class="exit">나가기</button>
 				</div>
 				<div class="right">
 					<button class="preSave">임시저장</button>
-					<button class="upload">업로드</button>
+					<button type="submit" class="upload">업로드</button>
 				</div>
 			</div>
-		</div>
+		</form>
 		<div class="view">
 			<p class="mirror title"></p>
 			<p class="mirror text"></p>

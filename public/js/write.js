@@ -14,3 +14,18 @@ function mirrorTitle(event) {
 function mirrorText(event) {
   viewText.textContent = text.value;
 }
+/////////////////////////
+document.querySelector('.editTool').addEventListener('submit', uploadPost);
+
+function uploadPost(event) {
+  event.preventDefault();
+
+  fetch('/write', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: title.value,
+      text: text.value,
+    }),
+    headers: { 'Content-type': 'application/json' },
+  });
+}

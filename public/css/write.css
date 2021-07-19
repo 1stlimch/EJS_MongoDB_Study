@@ -145,6 +145,18 @@ body {
   border-radius: var(--radiusButton);
 }
 
+/*asdfadfdfasdfadfads*/
+.exitUI input {
+  padding: var(--paddingVButton);
+  padding-left: var(--paddingHButton);
+  padding-right: var(--paddingHButton);
+  border: none;
+  width: var(--widthButton);
+  font-size: var(--sizeFontButton);
+  margin: var(--paddingExit);
+  border-radius: var(--radiusButton);
+}
+
 .exit {
   background-color: var(--colorExitButton);
 }
@@ -169,6 +181,7 @@ body {
 .upload:hover {
   color: white;
   background-color: var(--colorUploadButtonHover);
+  cursor: pointer;
 }
 
 .exitUI .right {
