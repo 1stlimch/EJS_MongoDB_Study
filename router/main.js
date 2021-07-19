@@ -3,6 +3,7 @@
 
 module.exports = function (app, DBSV) {
   app.get('/', function (req, res) {
+    console.log('main!');
     DBSV.Post.find(async function (err, posts) {
       if (err) return console.error(err);
 

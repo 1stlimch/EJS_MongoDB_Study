@@ -28,4 +28,10 @@ function uploadPost(event) {
     }),
     headers: { 'Content-type': 'application/json' },
   });
+
+  location.replace('/');
+}
+
+function goMain() {
+  location.replace('/');
 }
