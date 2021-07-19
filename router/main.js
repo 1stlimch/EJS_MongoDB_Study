@@ -3,18 +3,21 @@
 
 module.exports = function (app, DBSV) {
   app.get('/', function (req, res) {
-    console.log('main!');
-    res.render('index.html');
+    DBSV.Post.find(async function (err, posts) {
+      if (err) return console.error(err);
+
+      let readedPosts;
+      readedPosts = await posts;
+      res.render('index', { posts: readedPosts });
+    });
   });
+
   app.get('/write', function (req, res) {
     console.log('write!');
     res.render('write.html');
   });
 
   //app.post(path, callback [, callback ...])
-  //display posts
-  app.post('/', function (req, res) {});
-
   // save a post
   app.post('/write', function (req, res) {
     const title = req.body.title;

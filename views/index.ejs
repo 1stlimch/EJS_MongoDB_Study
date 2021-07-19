@@ -37,11 +37,16 @@
 			<div></div>
 		</aside>
 		<main>
+			<% posts.map(post => { %>
+				<article>
+					<h1><%= post.title %></h1>
+					<span><%= post.text %></span>
+				</article>
+			<% }) %>
 		</main>
 	</div>
 	<footer></footer>
 	<script src="js/main.js" defer></script>
-	<script src="js/article.js" defer></script>
 </body>
 
 </html>
