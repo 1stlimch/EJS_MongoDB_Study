@@ -2,10 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
 
 :root {
+  --MainBackColor: #f8f9fa;
+  --postBackColor: white;
   --TextColor: black;
   --blueColor: #306fdc;
   --pageMargin: 240px;
   --padding-vertical: 24px;
+
+  --postWidth: 280px;
 }
 
 * {
@@ -21,6 +25,8 @@ html {
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
+
+  background-color: var(--MainBackColor);
 }
 
 a {
@@ -32,7 +38,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: var(--MainBackColor);
   padding: 12px var(--pageMargin);
   padding-top: var(--padding-vertical);
 }
@@ -92,7 +98,9 @@ a {
 main {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
   padding-top: 24px;
   padding-right: var(--pageMargin);
@@ -103,23 +111,20 @@ article {
   flex-direction: column;
   justify-content: center;
 
+  width: var(--postWidth);
+  height: var(--postWidth);
+
   padding: 16px 24px;
   margin-bottom: 24px;
 
-  background-image: linear-gradient(
-    to right,
-    #ece9e6 0%,
-    #ffffff 51%,
-    #ece9e6 100%
-  );
   transition: 0.5s;
+  background-color: var(--postBackColor);
   background-size: 200% auto;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 4px;
 }
 
 article:hover {
-  background-position: right center; /* change the direction of the change here */
   text-decoration: none;
 }
 
