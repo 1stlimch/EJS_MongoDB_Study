@@ -14,9 +14,10 @@
   --sizeFontText: 1em;
   --colorBackExitUI: white;
 
+  /* Exit var */
+  --exitBarHeight: 68px;
   --paddingExit: 12px;
   --sizeFontButton: 1.2em;
-  --height: 24px;
   --widthButton: 104px;
   --paddingHButton: 12px;
   --paddingVButton: 8px;
@@ -64,11 +65,12 @@ body {
 }
 
 .editTool {
+  display: flex;
+  flex-direction: column;
   width: 50vw;
 
   background-color: var(--colorBackEdit);
   color: var(--colorEdit);
-
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   z-index: 5;
@@ -104,8 +106,8 @@ body {
   resize: none;
 
   margin: 0;
-  margin-right: var(--paddingEdit);
-  margin-left: var(--paddingEdit);
+  padding-right: var(--paddingEdit);
+  padding-left: var(--paddingEdit);
   width: calc(100% - var(--paddingEdit) * 2);
 
   color: black;
@@ -114,6 +116,12 @@ body {
   font-size: var(--sizeFontText);
   font-weight: 500;
   background-color: var(--colorBackTitleEdit);
+}
+
+.editTool .text {
+  height: calc(
+    100vh - var(--paddingEdit) * 2 - var(--exitBarHeight) - var(--sizeFontTitle)
+  );
 }
 
 .editTool .exitUI {
@@ -135,18 +143,6 @@ body {
 }
 
 .exitUI button {
-  padding: var(--paddingVButton);
-  padding-left: var(--paddingHButton);
-  padding-right: var(--paddingHButton);
-  border: none;
-  width: var(--widthButton);
-  font-size: var(--sizeFontButton);
-  margin: var(--paddingExit);
-  border-radius: var(--radiusButton);
-}
-
-/*asdfadfdfasdfadfads*/
-.exitUI input {
   padding: var(--paddingVButton);
   padding-left: var(--paddingHButton);
   padding-right: var(--paddingHButton);
@@ -194,6 +190,8 @@ body {
 }
 
 .view {
+  display: flex;
+  flex-direction: column;
   width: 50vw;
   background-color: var(--colorBackView);
 }

@@ -12,7 +12,7 @@ function mirrorTitle(event) {
 }
 
 function mirrorText(event) {
-  viewText.textContent = text.value;
+  viewText.innerHTML = text.value.replace(/(\n|\r\n)/g, '<br/>');
 }
 /////////////////////////
 document.querySelector('.editTool').addEventListener('submit', uploadPost);
