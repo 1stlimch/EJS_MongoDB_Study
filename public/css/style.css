@@ -100,6 +100,7 @@ a {
   display: block;
 }
 
+/**************************posts***************************/
 .posts {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +109,7 @@ a {
 }
 
 .post {
-  display: block;
+  display: flex;
   flex-direction: column;
 
   width: var(--postWidth);
@@ -118,14 +119,25 @@ a {
   background-color: var(--postBackColor);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   border-radius: 4px;
+  transition: margin-top 0.25s;
 }
 
 .post:hover {
   text-decoration: none;
+  margin-top: 0.5rem;
 }
 
 .post div {
   padding: 1rem;
+}
+
+.post .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.post .author {
+  border-top: rgb(248, 249, 250) 1px solid;
 }
 
 @media screen and (max-width: 768px) {
