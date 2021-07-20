@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap');
 
 :root {
   --MainBackColor: #f8f9fa;
@@ -29,6 +30,7 @@ html {
 
 body {
   margin: 0;
+  -webkit-font-smoothing: antialiased;
   font-family: 'Source Sans Pro', sans-serif;
 
   background-color: var(--MainBackColor);
@@ -111,15 +113,18 @@ a {
 .post {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   width: var(--postWidth);
   height: var(--postHeight);
   margin: 1rem;
 
   background-color: var(--postBackColor);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
   border-radius: 4px;
   transition: margin-top 0.25s;
+
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .post:hover {
@@ -127,8 +132,25 @@ a {
   margin-top: 0.5rem;
 }
 
+.post .image {
+  padding: 0;
+
+  width: 100%;
+  height: 167px;
+
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: lemonchiffon;
+}
+
 .post div {
   padding: 1rem;
+}
+
+.post .postMain {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .post .content {
@@ -136,8 +158,54 @@ a {
   flex-direction: column;
 }
 
-.post .author {
+.post .content .title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.post .content .text {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/***************Meta Data************/
+.post .meta {
+  font-size: 0.875rem;
+  display: flex;
   border-top: rgb(248, 249, 250) 1px solid;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.6rem 1rem;
+}
+
+.meta .user {
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+}
+
+.meta .user .thumnail {
+  background-color: gray;
+  padding: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.5rem;
+  border-radius: 0.875rem;
+}
+
+.meta .user .nickName b {
+  font-weight: 400;
+}
+
+.meta .likes {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.likes .fas {
+  margin-right: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
