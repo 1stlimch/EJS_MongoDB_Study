@@ -9,12 +9,17 @@
   --pageMargin: 240px;
   --padding-vertical: 24px;
 
-  --postWidth: 280px;
+  /*post size*/
+  --postWidth: 20rem;
+  --postHeight: 21rem;
+  --postMargin: 1rem;
 }
 
 * {
   margin: 0;
   padding: 0;
+
+  box-sizing: inherit;
 }
 
 html {
@@ -88,44 +93,39 @@ a {
 }
 
 .container {
-  display: flex;
+  width: 1728px;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: block;
 }
 
-.side div {
-  width: var(--pageMargin);
-}
-
-main {
-  width: 100%;
+.posts {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  padding-top: 24px;
-  padding-right: var(--pageMargin);
+  margin: -1rem; /*안쪽 간격은 유지하되, 바깥쪽 간격만 지울 수 있는 꿀팁*/
+  margin-top: 2rem;
 }
 
-article {
+.post {
   display: block;
   flex-direction: column;
-  justify-content: center;
 
   width: var(--postWidth);
-  height: var(--postWidth);
+  height: var(--postHeight);
+  margin: 1rem;
 
-  padding: 16px 24px;
-  margin-bottom: 24px;
-
-  transition: 0.5s;
   background-color: var(--postBackColor);
-  background-size: 200% auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   border-radius: 4px;
 }
 
-article:hover {
+.post:hover {
   text-decoration: none;
+}
+
+.post div {
+  padding: 1rem;
 }
 
 @media screen and (max-width: 768px) {

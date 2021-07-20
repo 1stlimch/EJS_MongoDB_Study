@@ -33,17 +33,18 @@
 	</nav>
 
 	<div class="container">
-		<aside class="side">
-			<div></div>
-		</aside>
-		<main>
+		<div class="posts">
 			<% posts.map(post => { %>
 				<article class="post">
-					<h1><%= post.title %></h1>
-					<p><%= post.text %></p>
+					<div class="image"></div>
+					<div class="content">
+						<h1><%= post.title %></h1>
+						<p><%= post.text %></p>
+					</div>
+					<div class="author"></div>
 				</article>
-			<% }) %>
-		</main>
+			<% console.log(post) }) %>
+		</div>
 	</div>
 	<footer></footer>
 	<script src="js/main.js" defer></script>
