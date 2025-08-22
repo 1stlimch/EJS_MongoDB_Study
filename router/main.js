@@ -4,8 +4,18 @@
 module.exports = function (app, DBSV) {
   app.get('/', function (req, res) {
     console.log('main!');
+    
+    // MongoDB가 연결되지 않았거나 Post 모델이 없는 경우 빈 배열로 렌더링
+    if (!DBSV.isConnected || !DBSV.Post) {
+      console.log('MongoDB not connected, rendering with empty posts');
+      return res.render('index', { posts: [] });
+    }
+    
     DBSV.Post.find(async function (err, posts) {
-      if (err) return console.error(err);
+      if (err) {
+        console.error('DB query error:', err);
+        return res.render('index', { posts: [] });
+      }
 
       let readedPosts;
       readedPosts = await posts;
